@@ -77,6 +77,22 @@
   margin: 0.5rem 0 0 0;
 }
 
+/* Responsive para tablets */
+@media (max-width: 1024px) {
+  .educacion-item {
+    padding: 1.25rem;
+  }
+  
+  .educacion-content .titulo {
+    font-size: 1.1rem;
+  }
+  
+  .educacion-content .institucion {
+    font-size: 0.95rem;
+  }
+}
+
+/* Responsive para móviles */
 @media (max-width: 768px) {
   .educacion-header {
     flex-direction: column;
@@ -85,5 +101,51 @@
   
   .educacion-icon {
     align-self: center;
+  }
+  
+  .educacion-item {
+    padding: 1rem;
+  }
+  
+  .educacion-content .titulo {
+    font-size: 1.1rem;
+  }
+  
+  .educacion-content .institucion {
+    font-size: 0.9rem;
+  }
+}
+
+/* Responsive para móviles pequeños */
+@media (max-width: 480px) {
+  .educacion-item {
+    padding: 0.75rem;
+  }
+  
+  .educacion-icon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .educacion-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .educacion-content .titulo {
+    font-size: 1rem;
+  }
+  
+  .educacion-content .institucion {
+    font-size: 0.85rem;
+  }
+  
+  .educacion-fechas .fecha {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .educacion-content .descripcion {
+    font-size: 0.85rem;
   }
 } 

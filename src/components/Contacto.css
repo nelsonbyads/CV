@@ -84,6 +84,24 @@
   word-break: break-all;
 }
 
+/* Responsive para tablets */
+@media (max-width: 1024px) {
+  .contacto-item {
+    padding: 0.875rem;
+  }
+  
+  .contacto-icon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .contacto-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Responsive para móviles */
 @media (max-width: 768px) {
   .contacto-item {
     flex-direction: column;
@@ -103,7 +121,7 @@
   }
 }
 
-/* Para pantallas muy pequeñas como el editor de Cursor */
+/* Responsive para móviles pequeños */
 @media (max-width: 480px) {
   .contacto-item {
     padding: 0.75rem;

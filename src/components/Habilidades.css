@@ -72,6 +72,18 @@
   color: #ffd700;
 }
 
+/* Responsive para tablets */
+@media (max-width: 1024px) {
+  .categoria-habilidades {
+    padding: 0.875rem;
+  }
+  
+  .habilidad-item {
+    padding: 0.625rem;
+  }
+}
+
+/* Responsive para móviles */
 @media (max-width: 768px) {
   .habilidad-info {
     flex-direction: column;
@@ -81,5 +93,41 @@
   
   .habilidad-nivel {
     align-self: flex-end;
+  }
+  
+  .categoria-habilidades {
+    padding: 0.75rem;
+  }
+  
+  .habilidad-item {
+    padding: 0.5rem;
+  }
+}
+
+/* Responsive para móviles pequeños */
+@media (max-width: 480px) {
+  .habilidades-content {
+    gap: 1rem;
+  }
+  
+  .categoria-habilidades {
+    padding: 0.625rem;
+  }
+  
+  .categoria-titulo {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .habilidad-item {
+    padding: 0.5rem;
+  }
+  
+  .habilidad-nombre {
+    font-size: 0.85rem;
+  }
+  
+  .star {
+    font-size: 0.75rem;
   }
 } 
