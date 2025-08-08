@@ -1,6 +1,6 @@
 import React from 'react';
 import { Experiencia as ExperienciaType } from '../types';
-import { FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaCalendarAlt } from 'react-icons/fa';
 import './Experiencia.css';
 
 interface ExperienciaProps {
