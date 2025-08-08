@@ -113,29 +113,83 @@
 
 /* Responsive para móviles */
 @media (max-width: 768px) {
-  .experiencia-header {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .experiencia-fechas .fecha {
-    align-self: flex-start;
-  }
-  
-  .experiencia-item {
-    padding: 1rem;
+  .experiencia-section {
+    margin-bottom: 1.5rem;
   }
   
   .section-title {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    text-align: center;
+    border-bottom-width: 2px;
+  }
+  
+  .experiencia-list {
+    gap: 1rem;
+  }
+  
+  .experiencia-item {
+    padding: 1.25rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-left-width: 5px;
+  }
+  
+  .experiencia-header {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .experiencia-title .puesto {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .experiencia-title .empresa {
+    font-size: 1rem;
+    color: #5a6fd8;
+  }
+  
+  .experiencia-fechas .fecha {
+    align-self: flex-start;
+    background: #667eea;
+    color: white;
+    font-weight: 500;
+    padding: 0.4rem 1rem;
+  }
+  
+  .experiencia-descripcion ul {
+    padding-left: 1.25rem;
+  }
+  
+  .experiencia-descripcion li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+  
+  .experiencia-tecnologias {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+  }
+  
+  .tecnologias-tags {
+    gap: 0.4rem;
+  }
+  
+  .tech-tag {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.75rem;
+    border-radius: 12px;
   }
 }
 
 /* Responsive para móviles pequeños */
 @media (max-width: 480px) {
   .experiencia-item {
-    padding: 0.75rem;
+    padding: 1rem;
+    border-radius: 8px;
   }
   
   .experiencia-title .puesto {
@@ -143,12 +197,12 @@
   }
   
   .experiencia-title .empresa {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   
   .experiencia-fechas .fecha {
     font-size: 0.8rem;
-    padding: 0.2rem 0.5rem;
+    padding: 0.3rem 0.8rem;
   }
   
   .experiencia-descripcion ul {
@@ -157,9 +211,15 @@
   
   .experiencia-descripcion li {
     font-size: 0.9rem;
+    margin-bottom: 0.5rem;
   }
   
   .section-title {
     font-size: 1.3rem;
+  }
+  
+  .tech-tag {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.7rem;
   }
 } 

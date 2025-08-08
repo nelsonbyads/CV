@@ -18,33 +18,77 @@
   align-items: center;
   gap: 1rem;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 1rem;
-  transition: all 0.2s ease;
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   max-width: 100%;
   overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.contacto-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.contacto-item:hover::before {
+  left: 100%;
 }
 
 .contacto-item:hover {
   background: rgba(255, 255, 255, 0.2);
-  transform: translateX(5px);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.contacto-item:active {
+  transform: translateY(-1px) scale(1.01);
+}
+
+.contacto-item:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
 }
 
 .contacto-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   flex-shrink: 0;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.contacto-item:hover .contacto-icon {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
 }
 
 .contacto-icon svg {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   color: white;
+  transition: all 0.3s ease;
+}
+
+.contacto-item:hover .contacto-icon svg {
+  transform: scale(1.1);
 }
 
 .contacto-info {
@@ -52,8 +96,10 @@
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  min-width: 0; /* Permite que el contenido se ajuste */
+  min-width: 0;
   overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 .contacto-label {
@@ -63,12 +109,17 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
   white-space: nowrap;
+  transition: color 0.3s ease;
 }
 
+.contacto-item:hover .contacto-label {
+  color: rgba(255, 255, 255, 0.9);
+}
+0
 .contacto-value {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: white;
-  text-decoration: none;
+  font-weight: 500;
   word-break: break-all;
   overflow-wrap: break-word;
   hyphens: auto;
@@ -76,37 +127,56 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  transition: all 0.3s ease;
 }
 
-.contacto-value:hover {
-  text-decoration: underline;
-  white-space: normal;
-  word-break: break-all;
+.contacto-item:hover .contacto-value {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 /* Responsive para tablets */
 @media (max-width: 1024px) {
   .contacto-item {
-    padding: 0.875rem;
+    padding: 1rem;
   }
   
   .contacto-icon {
-    width: 36px;
-    height: 36px;
+    width: 42px;
+    height: 42px;
   }
   
   .contacto-icon svg {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
   }
 }
 
 /* Responsive para móviles */
 @media (max-width: 768px) {
+  .contacto-section {
+    margin-bottom: 1.5rem;
+  }
+  
+  .contacto-list {
+    gap: 0.875rem;
+  }
+  
   .contacto-item {
     flex-direction: column;
     text-align: center;
-    gap: 0.5rem;
+    gap: 0.875rem;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  
+  .contacto-item:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
   }
   
   .contacto-info {
@@ -114,28 +184,48 @@
     width: 100%;
   }
   
+  .contacto-label {
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+    font-weight: 700;
+  }
+  
   .contacto-value {
     white-space: normal;
     word-break: break-all;
     text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  
+  .contacto-icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(255, 255, 255, 0.25);
+  }
+  
+  .contacto-icon svg {
+    width: 24px;
+    height: 24px;
   }
 }
 
 /* Responsive para móviles pequeños */
 @media (max-width: 480px) {
   .contacto-item {
-    padding: 0.75rem;
-    gap: 0.5rem;
+    padding: 1.25rem;
+    gap: 0.75rem;
   }
   
   .contacto-icon {
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
   }
   
   .contacto-icon svg {
-    width: 14px;
-    height: 14px;
+    width: 20px;
+    height: 20px;
   }
   
   .contacto-label {
@@ -143,6 +233,6 @@
   }
   
   .contacto-value {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 } 

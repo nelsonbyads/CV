@@ -7,6 +7,7 @@
   justify-content: center;
   padding: 1rem;
   box-sizing: border-box;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 /* Responsive para tablets */
@@ -21,6 +22,8 @@
   .App {
     padding: 0.25rem;
     min-height: 100vh;
+    justify-content: flex-start;
+    padding-top: 0.5rem;
   }
 }
 
@@ -28,5 +31,6 @@
 @media (max-width: 480px) {
   .App {
     padding: 0;
+    padding-top: 0.25rem;
   }
 } 

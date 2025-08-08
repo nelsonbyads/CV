@@ -85,22 +85,63 @@
 
 /* Responsive para móviles */
 @media (max-width: 768px) {
-  .habilidad-info {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
+  .habilidades-section {
+    margin-bottom: 1.5rem;
   }
   
-  .habilidad-nivel {
-    align-self: flex-end;
+  .habilidades-content {
+    gap: 1.25rem;
   }
   
   .categoria-habilidades {
-    padding: 0.75rem;
+    padding: 1.25rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .categoria-titulo {
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+    text-align: center;
+    opacity: 1;
+  }
+  
+  .habilidades-list {
+    gap: 0.875rem;
   }
   
   .habilidad-item {
-    padding: 0.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .habilidad-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  .habilidad-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .habilidad-nombre {
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .habilidad-nivel {
+    align-self: center;
+    gap: 3px;
+  }
+  
+  .star {
+    font-size: 1rem;
   }
 }
 
@@ -111,23 +152,23 @@
   }
   
   .categoria-habilidades {
-    padding: 0.625rem;
+    padding: 1rem;
   }
   
   .categoria-titulo {
-    font-size: 0.9rem;
-    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
   }
   
   .habilidad-item {
-    padding: 0.5rem;
+    padding: 0.875rem;
   }
   
   .habilidad-nombre {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
   
   .star {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
   }
 } 

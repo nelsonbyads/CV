@@ -2,11 +2,25 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 40px var(--shadow-heavy);
   overflow: hidden;
-  color: #333;
+  color: var(--text-primary);
+  position: relative;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cv-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+  z-index: 1;
 }
 
 .cv-content {
@@ -21,27 +35,53 @@
 }
 
 .cv-main {
-  padding: 2rem;
-  background: #fafafa;
+  padding: var(--spacing-xl);
+  background: var(--background-light);
+  position: relative;
+}
+
+.cv-main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.02) 0%, rgba(118, 75, 162, 0.02) 100%);
+  pointer-events: none;
 }
 
 .cv-sidebar {
-  padding: 2rem;
-  background: #667eea;
-  color: white;
+  padding: var(--spacing-xl);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.cv-sidebar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="sidebar-grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23sidebar-grain)"/></svg>');
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 /* Responsive para tablets */
 @media (max-width: 1024px) {
   .cv-container {
     max-width: 100%;
-    border-radius: 8px;
+    border-radius: var(--radius-md);
     margin: 0;
   }
   
   .cv-main,
   .cv-sidebar {
-    padding: 1.5rem;
+    padding: var(--spacing-lg);
   }
 }
 
@@ -49,16 +89,28 @@
 @media (max-width: 768px) {
   .cv-sections {
     grid-template-columns: 1fr;
+    min-height: auto;
   }
   
   .cv-main,
   .cv-sidebar {
-    padding: 1rem;
+    padding: var(--spacing-md);
   }
   
   .cv-container {
     border-radius: 0;
     box-shadow: none;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .cv-main {
+    background: var(--white);
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+  
+  .cv-sidebar {
+    padding: var(--spacing-lg) var(--spacing-md);
   }
 }
 
@@ -66,6 +118,10 @@
 @media (max-width: 480px) {
   .cv-main,
   .cv-sidebar {
-    padding: 0.75rem;
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+  
+  .cv-container {
+    border-radius: 0;
   }
 } 

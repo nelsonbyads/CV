@@ -1,21 +1,53 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.6;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  
+  /* Variables de color modernas */
+  --primary-color: #667eea;
+  --secondary-color: #764ba2;
+  --accent-color: #ffd700;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --background-light: #fafafa;
+  --white: #ffffff;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-medium: rgba(0, 0, 0, 0.15);
+  --shadow-heavy: rgba(0, 0, 0, 0.2);
+  
+  /* Variables de espaciado */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  
+  /* Variables de border-radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  
+  /* Variables de transiciones */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -24,48 +56,106 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: var(--text-primary);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: var(--spacing-lg);
   text-align: center;
   width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-normal);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Selección de texto personalizada */
+::selection {
+  background: var(--primary-color);
+  color: var(--white);
 }
 
 /* Responsive para tablets */
 @media (max-width: 1024px) {
   #root {
-    padding: 1rem;
+    padding: var(--spacing-md);
+  }
+  
+  body {
+    font-size: 15px;
   }
 }
 
 /* Responsive para móviles */
 @media (max-width: 768px) {
   #root {
-    padding: 0.5rem;
+    padding: var(--spacing-sm);
+    min-height: 100vh;
+    align-items: flex-start;
+    padding-top: var(--spacing-md);
   }
   
   body {
     min-width: 100%;
+    font-size: 14px;
   }
 }
 
 /* Responsive para móviles pequeños */
 @media (max-width: 480px) {
   #root {
-    padding: 0.25rem;
+    padding: var(--spacing-xs);
+    padding-top: var(--spacing-sm);
+  }
+  
+  body {
+    font-size: 13px;
   }
 }
 
+/* Estilos para enlaces */
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--primary-color);
   text-decoration: inherit;
+  transition: color var(--transition-normal);
 }
+
 a:hover {
-  color: #535bf2;
+  color: var(--secondary-color);
+}
+
+/* Estilos para títulos */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
 }
 
 h1 {
@@ -73,36 +163,139 @@ h1 {
   line-height: 1.1;
 }
 
+/* Estilos para botones */
 button {
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--white);
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: all var(--transition-normal);
+  border-radius: var(--radius-md);
 }
 
-@media (prefers-color-scheme: light) {
+button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow-medium);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Estilos para inputs */
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--text-secondary);
+  padding: 0.5em 0.75em;
+  transition: all var(--transition-normal);
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: 2px solid var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Estilos para listas */
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilos para imágenes */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Estilos para iconos */
+svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Estilos para animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Clases de utilidad para animaciones */
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.slide-in {
+  animation: slideIn 0.6s ease-out;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Estilos para modo oscuro */
+@media (prefers-color-scheme: dark) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --background-light: #1a1a1a;
   }
+  
+  body {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  }
+  
   a:hover {
-    color: #747bff;
+    color: var(--accent-color);
   }
+  
   button {
-    background-color: #f9f9f9;
-    color: #213547;
+    background-color: var(--primary-color);
+    color: var(--white);
+  }
+  
+  button:hover {
+    background-color: var(--secondary-color);
   }
 } 
