@@ -1,0 +1,112 @@
+.experiencia-section {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #667eea;
+}
+
+.experiencia-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.experiencia-item {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #667eea;
+}
+
+.experiencia-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.experiencia-title .puesto {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 0.25rem 0;
+}
+
+.experiencia-title .empresa {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #667eea;
+  margin: 0;
+}
+
+.experiencia-fechas .fecha {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+  background: #f5f5f5;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.experiencia-descripcion ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.experiencia-descripcion li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+.experiencia-tecnologias {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.experiencia-tecnologias h5 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #666;
+  margin: 0 0 0.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tecnologias-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  background: #667eea;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .experiencia-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .experiencia-fechas .fecha {
+    align-self: flex-start;
+  }
+} 

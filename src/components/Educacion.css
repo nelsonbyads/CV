@@ -1,0 +1,89 @@
+.educacion-section {
+  margin-bottom: 2rem;
+}
+
+.educacion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.educacion-item {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #764ba2;
+}
+
+.educacion-header {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.educacion-icon {
+  background: #764ba2;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.educacion-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.educacion-content {
+  flex: 1;
+}
+
+.educacion-content .titulo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 0.25rem 0;
+}
+
+.educacion-content .institucion {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #764ba2;
+  margin: 0 0 0.5rem 0;
+}
+
+.educacion-fechas .fecha {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+  background: #f5f5f5;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  display: inline-flex;
+  margin-bottom: 0.5rem;
+}
+
+.educacion-content .descripcion {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0.5rem 0 0 0;
+}
+
+@media (max-width: 768px) {
+  .educacion-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .educacion-icon {
+    align-self: center;
+  }
+} 
