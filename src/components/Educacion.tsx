@@ -9,12 +9,16 @@ interface EducacionProps {
 
 const Educacion: React.FC<EducacionProps> = ({ educacion }) => {
   const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('es-ES', { 
-      year: 'numeric', 
-      month: 'long' 
+    const [year, month] = dateString.split("-");
+    const date = new Date(Date.UTC(Number(year), Number(month) - 1, 1));
+    return date.toLocaleDateString("es-ES", {
+      year: "numeric",
+      month: "long",
+      timeZone: "UTC" // evita corrimiento
     });
   };
+  
+  
 
   return (
     <section className="educacion-section">
@@ -32,7 +36,7 @@ const Educacion: React.FC<EducacionProps> = ({ educacion }) => {
                 <div className="educacion-fechas">
                   <span className="fecha">
                     <FaCalendarAlt />
-                    {formatDate(edu.fechaInicio)} - {edu.fechaFin ? formatDate(edu.fechaFin) : 'En curso'}
+                    {formatDate(edu.fechaInicio)} - {edu.fechaFin ? formatDate(edu.fechaFin) : 'En Curso'}
                   </span>
                 </div>
                 {edu.descripcion && (

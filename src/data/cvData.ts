@@ -45,15 +45,16 @@ export const cvData: CVData = {
       id: 1,
       institucion: "SENA",
       titulo: "Tecnologo en Gestion Empresarial",
-      fechaInicio: "2017",
-      fechaFin: "2019",
+      fechaInicio: "2018-01",
+      fechaFin: "2019-01",
       descripcion: "Profesional encargado de apoyar la planificación, coordinación y control de las operaciones administrativas, financieras y logísticas de la empresa, asegurando la eficiencia operativa y el cumplimiento de metas de productividad y rentabilidad." 
     },
     {
       id: 2,
       institucion: "Universidad de Medellín",
       titulo: "Diplomado en Power BI",
-      fechaInicio: "2024",
+      fechaInicio: "2023-01",
+      fechaFin: "2023-05",
       descripcion: "Curso avanzado de Power BI"
     }
   ],
@@ -94,6 +95,6 @@ export const cvData: CVData = {
     telefono: "+57 319 242 9257",
     linkedin: "https://www.linkedin.com/in/nelson-franco89/",
     github: "https://github.com/nelsonbyads",
-    portfolio: "https://byads.co"
+    portfolio: "https://jeeves.byads.co/Dashboard"
   }
 }; 
